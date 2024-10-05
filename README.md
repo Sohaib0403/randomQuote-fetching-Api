@@ -11,5 +11,5 @@ Currently, two official plugins are available:
 
 
 
-https://github.com/user-attachments/assets/9ad9ec7b-dce2-4071-8736-52e7e345e765
+
 
