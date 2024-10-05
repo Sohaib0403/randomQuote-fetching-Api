@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import QuoteCard from './components/QuoteCard';
-import './App.css'; // Import main styles
+import './App.css'; 
 
 const App = () => {
   const [quote, setQuote] = useState('');
+  const [savedQuotes, setSavedQuotes] = useState([]);
 
   useEffect(() => {
     fetchQuote();
@@ -19,10 +20,23 @@ const App = () => {
     }
   };
 
+  const saveQuote = () => {
+    setSavedQuotes([...savedQuotes, quote]);
+    fetchQuote(); 
+  };
+
   return (
     <div className="App">
-      <h1>Random Ron Swanson Quote</h1>
-      <QuoteCard quote={quote} onNewQuote={fetchQuote} />
+      <h1>Quote of the day</h1>
+      <QuoteCard quote={quote} onSave={saveQuote} />
+      <h2>Quotes</h2>
+      <div className="saved-quotes">
+        {savedQuotes.map((q, index) => (
+          <div key={index} className="saved-quote">
+            "{q}"
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
