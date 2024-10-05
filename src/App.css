@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.saved-quotes {
+  margin-top: 20px;
+}
+
+.saved-quote {
+  background-color: #4d4a4a;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
